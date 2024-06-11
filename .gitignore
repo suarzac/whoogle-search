@@ -20,7 +20,7 @@ dist/
 *.egg-info/
 
 # env
-whoogle.env
+# whoogle.env
 
 # vim
 *~
