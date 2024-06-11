@@ -1,7 +1,5 @@
 # can't use mem_limit in a 3.x docker-compose file in non swarm mode
 # see https://github.com/docker/compose/issues/4513
-version: "2.4"
-
 services:
   whoogle-search:
     image: ${WHOOGLE_IMAGE:-benbusby/whoogle-search}
@@ -42,7 +40,7 @@ services:
       #- WHOOGLE_ALT_WIKI=farside.link/wikiless
       #- WHOOGLE_ALT_IMDB=farside.link/libremdb
       #- WHOOGLE_ALT_QUORA=farside.link/quetre
-    #env_file: # Alternatively, load variables from whoogle.env
-      #- whoogle.env
+    env_file: # Alternatively, load variables from whoogle.env
+      - whoogle.env
     ports:
-      - 5000:5000
+      - 80:8080
